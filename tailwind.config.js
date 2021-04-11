@@ -18,16 +18,5 @@ module.exports = {
     },
   },
   
-  // plugins: [require('@tailwindcss/forms')],
-  plugins: [
-    plugin(function({ addBase, theme }) {
-      addBase({
-        '*': {
-          fontFamily: 'montserrat',
-          fontSize: '16px',
-          boxSizing: 'border-box',
-        }
-      })
-    })
-  ]
+  plugins: [require('@tailwindcss/forms')],
 }
