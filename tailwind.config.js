@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: [
     './components/**/*.{vue,js}',
@@ -15,5 +17,17 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  
+  // plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        '*': {
+          fontFamily: 'montserrat',
+          fontSize: '16px',
+          boxSizing: 'border-box',
+        }
+      })
+    })
+  ]
 }
