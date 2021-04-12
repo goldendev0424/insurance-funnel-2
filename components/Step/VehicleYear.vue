@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="w-full mt-6">
     <Title>Select Your Vehicle Year</Title>
-    <div class="grid grid-cols-10 gap-2 sm:grid-cols-4">
+    <div class="flex flex-wrap">
       <Option
         v-for="year in years"
         :key="year"

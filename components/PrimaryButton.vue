@@ -1,13 +1,7 @@
 <template lang="html">
   <button
-    class="px-5 leading-none border-yellow-500 bg-yellow-500 text-gray-900 font-semibold tracking-wide outline-none sm:w-full sm:p-4 sm:mt-6"
+    class="p-5 leading-none text-white font-bold text-2xl outline-none rounded border-b-3 border-blue-600 bg-blue-400 hover:bg-blue-600 duration-300 sm:w-full sm:p-4 sm:mt-6"
     v-bind="$attrs"
-    :class="{
-      'py-6 text-sm rounded-sm': !bold,
-      'py-4 text-md rounded-xl': bold,
-      'mt-12': !right,
-      'ml-8 sm:ml-0': right,
-    }"
     v-on="$listeners"
   >
     <slot></slot>
@@ -27,8 +21,3 @@ export default class PrimaryButton extends Vue {
   @Prop({ default: false }) right!: boolean
 }
 </script>
-
-<style lang="stylus" scoped>
-button
-  border-width 1.5px !important
-</style>

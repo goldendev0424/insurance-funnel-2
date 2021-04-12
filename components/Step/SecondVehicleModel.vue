@@ -5,14 +5,16 @@
       {{ $store.state.secondaryVehicle.make }}</Subtitle
     >
     <Title>Second Vehicle Model</Title>
-    <Option
-      v-for="model in models"
-      :key="model"
-      class="mr-2 mb-2 sm:mr-0 sm:block sm:w-full"
-      :active="model === selectedModel"
-      @click="next(model)"
-      >{{ model }}</Option
-    >
+    <div class="flex flex-wrap justify-between">
+      <Option
+        v-for="model in models"
+        :key="model"
+        class="w-5.5/12"
+        :active="model === selectedModel"
+        @click="next(model)"
+        >{{ model }}</Option
+      >
+    </div>
   </div>
 </template>
 

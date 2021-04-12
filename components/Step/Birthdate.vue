@@ -1,16 +1,17 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-6" tag="div">
     <Title>Birthdate</Title>
-    <TextInput
-      v-model="birthdate"
-      class="w-64 block"
-      mask="##  /  ##  /  ####"
-      rules="birthdate"
-    ></TextInput>
-    <PrimaryButton @click="next">CONTINUE</PrimaryButton>
-    <ValidationErrorText v-if="errors.length">
-      {{ errors[0] }}</ValidationErrorText
-    >
+    <div class="flex flex-col items-center">
+      <TextInput
+        v-model="birthdate"
+        class="mb-5"
+        mask="##  /  ##  /  ####"
+        rules="birthdate"
+        :errors="errors"
+      ></TextInput>
+
+      <PrimaryButton @click="next" class="w-1/2">CONTINUE</PrimaryButton>
+    </div>
   </ValidationObserver>
 </template>
 

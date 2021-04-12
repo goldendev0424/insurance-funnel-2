@@ -1,8 +1,7 @@
 <template lang="html">
-  <div class="w-full">
-    <div class="step-form sm:max-w-none sm:w-full sm:m-0">
+  <div class="w-full flex justify-center">
+    <div class="sm:max-w-none sm:w-full sm:m-0 px-5 pt-8 sm:pt-3 min-h-125 max-w-200 min-w-200 sm:min-w-full">
       <ProgressBar
-        class="mt-8 sm:mt-3"
         :steps="formOrder.length"
         :current="current"
       ></ProgressBar>
@@ -171,14 +170,3 @@ export default class StepForm extends Vue {
 }
 </script>
 
-<style lang="stylus" scoped>
-.step-form
-  min-height 500px
-  max-width 800px
-  width 100%
-  margin 0 auto
-  padding 0 20px
-
-.duration-400
-  transition-duration 0.4s
-</style>

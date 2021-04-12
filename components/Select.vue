@@ -1,6 +1,7 @@
 <template lang="html">
   <select
-    class="py-2 px-3 leading-none tracking-wide text-xl border rounded-sm bg-gray-200 text-blue-700 border-gray-400 sm:block sm:w-full"
+    class="w-full p-5 sm:p-3 leading-none text-xl text-blue-700 shadow rounded duration-500 border outline-none hover:border-blue-500 focus:border-blue-500
+          bg-gray-200 font-bold focus:bg-white"
     :value="finalValue"
     @input="$emit('input', $event.target.value)"
   >

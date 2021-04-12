@@ -1,18 +1,16 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-8" tag="div">
     <Title>Enter Zip Code To Begin</Title>
-    <div class="flex items-center sm:block">
+    <div class="flex items-start justify-center sm:block">
       <TextInput
         v-model="zipcode"
-        class="w-64"
         rules="zipcode"
-        placeholder="######"
+        :errors="errors"
+        maxlength="5"
+        placeholder="#####"
       ></TextInput>
-      <PrimaryButton :right="true" @click="next">CHECK RATES</PrimaryButton>
+      <PrimaryButton :right="true" @click="next" class="ml-8 sm:ml-0">CHECK RATES</PrimaryButton>
     </div>
-    <ValidationErrorText v-if="errors.length">
-      {{ errors[0] }}</ValidationErrorText
-    >
   </ValidationObserver>
 </template>
 
@@ -22,14 +20,12 @@ import { Component, Vue } from 'nuxt-property-decorator'
 import Title from '~/components/Title.vue'
 import TextInput from '~/components/TextInput.vue'
 import PrimaryButton from '~/components/PrimaryButton.vue'
-import ValidationErrorText from '~/components/ValidationErrorText.vue'
 
 @Component({
   components: {
     Title,
     TextInput,
     PrimaryButton,
-    ValidationErrorText,
   },
 })
 export default class Zipcode extends Vue {

@@ -6,14 +6,16 @@
       {{ $store.state.secondaryVehicle.model }}</Subtitle
     >
     <Title>Second Vehicle Trim</Title>
-    <Option
-      v-for="trim in trims"
-      :key="trim"
-      class="mr-2 mb-2 sm:mr-0 sm:block sm:w-full"
-      :active="trim === selectedTrim"
-      @click="next(trim)"
-      >{{ trim }}</Option
-    >
+    <div class="flex flex-wrap justify-between">
+      <Option
+        v-for="trim in trims"
+        :key="trim"
+        class="w-5.5/12"
+        :active="trim === selectedTrim"
+        @click="next(trim)"
+        >{{ trim }}</Option
+      >
+    </div>
   </div>
 </template>
 

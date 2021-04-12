@@ -1,12 +1,8 @@
 <template lang="html">
   <div class="w-full mt-6">
-    <Title v-if="isHomeOwner"
-      >Would you like to also receive home insurance policy quotes? You may be
+    <Title
+      >Would you like to also receive {{isHomeOwner ? 'home' : 'renters'}} insurance policy quotes? You may be
       able to bundle and save even more on your auto policy.</Title
-    >
-    <Title v-else
-      >Would you like to also receive renters insurance policy quotes? You may
-      be able to bundle and save even more on your auto policy.</Title
     >
     <BinarySelection :value="bundle" @input="next"></BinarySelection>
   </div>

@@ -25,7 +25,7 @@
         <BinarySelection v-model="duiConviction"></BinarySelection>
       </div>
     </div>
-    <PrimaryButton class="mb-6" @click="next">CONTINUE</PrimaryButton>
+    <PrimaryButton class="my-6 w-full" @click="next">CONTINUE</PrimaryButton>
     <ValidationErrorText v-if="errors.length" class="mb-8">
       {{ errors[0] }}</ValidationErrorText
     >

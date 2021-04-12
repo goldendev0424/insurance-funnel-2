@@ -5,14 +5,16 @@
       {{ $store.state.primaryVehicle.make }}</Subtitle
     >
     <Title>Select Your Vehicle Model</Title>
-    <Option
-      v-for="model in models"
-      :key="model"
-      class="mr-2 mb-2 sm:mr-0 sm:block sm:w-full"
-      :active="model === selectedModel"
-      @click="next(model)"
-      >{{ model }}</Option
-    >
+    <div class="flex flex-wrap justify-between">
+      <Option
+        v-for="model in models"
+        :key="model"
+        class="w-5.5/12"
+        :active="model === selectedModel"
+        @click="next(model)"
+        >{{ model }}</Option
+      >
+    </div>
   </div>
 </template>
 
@@ -24,14 +26,12 @@ import { mapState } from 'vuex'
 import Subtitle from '~/components/Subtitle.vue'
 import Title from '~/components/Title.vue'
 import Option from '~/components/Option.vue'
-import Select from '~/components/Select.vue'
 
 @Component({
   components: {
     Subtitle,
     Title,
     Option,
-    Select,
   },
   computed: mapState({
     selectedModel: (state: any) => state.primaryVehicle.model,

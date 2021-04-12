@@ -2,17 +2,19 @@
   <div class="w-full mt-6">
     <Subtitle>{{ $store.state.primaryVehicle.year }}</Subtitle>
     <Title>Select Your Vehicle Make</Title>
-    <div class="mb-6 sm:grid sm:grid-cols-2 gap-2">
+    <div class="mb-6 flex flex-wrap justify-between">
       <Option
         v-for="make in makes"
         :key="make"
-        class="mr-2 mb-2 sm:m-0"
+        class="w-5.5/12"
         :active="make === selectedMake"
         @click="next(make)"
         >{{ make }}</Option
       >
     </div>
-    <Select :options="selectMakes" :value="selectedMake" @input="next"></Select>
+    <div class="px-1 mb-3">
+      <Select :options="selectMakes" :value="selectedMake" @input="next"></Select>
+    </div>
   </div>
 </template>
 

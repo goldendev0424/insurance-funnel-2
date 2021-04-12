@@ -1,10 +1,9 @@
 <template lang="html">
   <button
-    class="outline-none px-3 py-5 leading-none font-semibold text-lg rounded-sm border border-transparent transition duration-200 hover:border-indigo-700 sm:text-base sm:px-2 sm:py-4"
+    class="font-bold text-2xl text-white rounded border-b-3 border-blue-600 bg-blue-400 hover:bg-blue-600 duration-300 py-4 px-5 mb-3 mx-1 outline-none"
     v-bind="$props"
     :class="{
-      'text-indigo-700 bg-gray-200': !active,
-      'text-white bg-indigo-700': active,
+      'bg-blue-600': active,
     }"
     v-on="$listeners"
   >

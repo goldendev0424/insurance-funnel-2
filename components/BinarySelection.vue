@@ -1,18 +1,18 @@
 <template lang="html">
   <ValidationProvider
     ref="provider"
-    class="flex space-x-4 sm:grid sm:grid-cols-2 gap-2 sm:gap-4 sm:space-x-0 sm:text-base"
+    class="flex"
     tag="div"
     :rules="rules"
   >
     <Option
-      class="w-24 sm:w-full"
+      class="w-full"
       :active="value === leftValue"
       @click="$emit('input', leftValue)"
       >{{ leftText }}</Option
     >
     <Option
-      class="w-24 sm:w-full"
+      class="w-full"
       :active="value === rightValue"
       @click="$emit('input', rightValue)"
       >{{ rightText }}</Option

@@ -1,11 +1,11 @@
 <template lang="html">
   <div class="w-full mt-6">
     <Title>Current Auto Insurance</Title>
-    <div class="sm:grid sm:grid-cols-2 gap-2">
+    <div class="">
       <Option
         v-for="insuranceCompany in insuranceCompanies"
         :key="insuranceCompany"
-        class="mr-2 mb-2 sm:m-0"
+        class="w-5.5/12"
         :active="insuranceCompany === selectedInsuranceCompany"
         @click="next(insuranceCompany)"
         >{{ insuranceCompany }}</Option

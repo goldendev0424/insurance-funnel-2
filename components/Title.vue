@@ -1,7 +1,5 @@
 <template lang="html">
-  <div
-    class="text-xl leading-tight text-gray-800 mb-5 sm:font-bold sm:text-base sm:text-center sm:mb-3"
-  >
+  <div class="leading-tight text-gray-800 font-sans text-center sm:font-bold text-5xl sm:text-base mb-5 sm:mb-3">
     <slot></slot>
   </div>
 </template>

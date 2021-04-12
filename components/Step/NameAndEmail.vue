@@ -1,31 +1,29 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-6" tag="div">
-    <div class="grid grid-cols-2 gap-8 sm:grid-cols-1 sm:gap-5">
-      <div class="w-full">
-        <Title class="mb-3">First Name</Title>
-        <TextInput
-          v-model="name.first"
-          class="w-64"
-          rules="first-name"
-        ></TextInput>
-      </div>
-      <div class="w-full">
-        <Title class="mb-3">Last Name</Title>
-        <TextInput
-          v-model="name.last"
-          class="w-64"
-          rules="last-name"
-        ></TextInput>
-      </div>
-      <div class="w-full">
-        <Title class="mb-3">Email</Title>
-        <TextInput v-model="email" class="w-64" rules="email"></TextInput>
-      </div>
+    <div>
+      <TextInput
+        v-model="name.first"
+        class="mb-8"
+        rules="first-name"
+        placeholder="First Name"
+        :errors="[errors.firstName]"
+      ></TextInput>
+      <TextInput
+        v-model="name.last"
+        class="mb-8"
+        rules="last-name"
+        placeholder="Last Name"
+        :errors="[errors.lastName]"
+      ></TextInput>
+      <TextInput
+        v-model="email"
+        class="mb-8"
+        rules="email"
+        placeholder="Email"
+        :errors="[errors.email]"
+      ></TextInput>
     </div>
-    <PrimaryButton @click="next">CONTINUE</PrimaryButton>
-    <ValidationErrorText v-if="errors.length">
-      {{ errors[0] }}</ValidationErrorText
-    >
+    <PrimaryButton @click="next" class="w-full mb-4">CONTINUE</PrimaryButton>
   </ValidationObserver>
 </template>
 
@@ -35,14 +33,12 @@ import { Component, Vue } from 'nuxt-property-decorator'
 import Title from '~/components/Title.vue'
 import TextInput from '~/components/TextInput.vue'
 import PrimaryButton from '~/components/PrimaryButton.vue'
-import ValidationErrorText from '~/components/ValidationErrorText.vue'
 
 @Component({
   components: {
     Title,
     TextInput,
     PrimaryButton,
-    ValidationErrorText,
   },
 })
 export default class NameAndEmail extends Vue {
@@ -52,7 +48,11 @@ export default class NameAndEmail extends Vue {
     }
   }
 
-  errors: string[] = []
+  errors = {
+    firstName: '',
+    lastName: '',
+    email: '',
+  }
 
   name = {
     first: '',
@@ -68,11 +68,29 @@ export default class NameAndEmail extends Vue {
   }
 
   async next() {
-    this.errors = []
+    this.errors = {
+      firstName: '',
+      lastName: '',
+      email: '',
+    }
+
     const res = await this.$refs.observer.validateWithInfo()
 
     if (!res.isValid) {
-      this.errors = Object.values(res.errors).flat()
+      let errors = Object.values(res.errors).flat()
+      errors.forEach((error) => {
+        if (error.includes('first name') && this.errors.firstName === '') {
+          this.errors.firstName = error
+        }
+
+        if (error.includes('last name') && this.errors.lastName === '') {
+          this.errors.lastName = error
+        }
+
+        if (error.includes('email') && this.errors.email === '') {
+          this.errors.email = error
+        }
+      })
       return
     }
 

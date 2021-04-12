@@ -1,31 +1,28 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-6" tag="div">
     <BigTitle>{{ $store.state.name.first }}, Last Step!</BigTitle>
-    <div class="grid grid-cols-2 gap-8 sm:grid-cols-1 sm:gap-5">
-      <div class="w-full">
-        <Title class="mb-3">Street Address</Title>
+    <div class="">
+      <div class="mb-6">
         <TextInput
           v-model="streetAddress"
-          class="w-64"
+          class=""
           rules="street-address"
+          placeholder="Street Address"
+          :errors="[errors.address]"
         ></TextInput>
-        <div
-          class="mt-1 font-thin text-indigo-600 text-sm text-center hidden sm:block"
-        >
+        <div class="mt-1 font-thin text-indigo-600 text-sm sm:block">
           {{ city }}, {{ state }} {{ $store.state.zipcode }}
         </div>
       </div>
-      <div class="w-full">
-        <Title class="mb-3">Phone Number</Title>
+      <div class="mb-6">
         <TextInput
           v-model="phoneNumber"
-          class="w-64"
+          class=""
           rules="phone-number"
+          placeholder="Phone Number"
+          :errors="[errors.phoneNumber]"
         ></TextInput>
       </div>
-    </div>
-    <div class="mt-4 font-bold text-indigo-600 text-xl sm:hidden">
-      {{ city }}, {{ state }} {{ $store.state.zipcode }}
     </div>
     <PrimaryButton
       class="block w-full"
@@ -33,9 +30,6 @@
       :disabled="submitted"
       @click="submit"
       >Get My Auto Quotes</PrimaryButton
-    >
-    <ValidationErrorText v-if="errors.length">
-      {{ errors[0] }}</ValidationErrorText
     >
     <div class="mt-16 mb-10 space-y-4 text-xs text-gray-400 sm:mt-12">
       <div>
@@ -85,7 +79,6 @@ import BigTitle from '~/components/BigTitle.vue'
 import Title from '~/components/Title.vue'
 import TextInput from '~/components/TextInput.vue'
 import PrimaryButton from '~/components/PrimaryButton.vue'
-import ValidationErrorText from '~/components/ValidationErrorText.vue'
 
 @Component({
   components: {
@@ -93,7 +86,6 @@ import ValidationErrorText from '~/components/ValidationErrorText.vue'
     Title,
     TextInput,
     PrimaryButton,
-    ValidationErrorText,
   },
 })
 export default class GetQuotes extends Vue {
@@ -103,7 +95,10 @@ export default class GetQuotes extends Vue {
     }
   }
 
-  errors: string[] = []
+  errors = {
+    address: '',
+    phoneNumber: '',
+  }
 
   streetAddress = ''
   phoneNumber = ''
@@ -125,11 +120,24 @@ export default class GetQuotes extends Vue {
   }
 
   async submit() {
-    this.errors = []
+    this.errors = {
+      address: '',
+      phoneNumber: '',
+    }
     const res = await this.$refs.observer.validateWithInfo()
 
     if (!res.isValid) {
-      this.errors = Object.values(res.errors).flat()
+      let errors = Object.values(res.errors).flat()
+      console.log(errors)
+      errors.forEach((error) => {
+        if (error.includes('street address') && this.errors.address === '') {
+          this.errors.address = error
+        }
+
+        if (error.includes('phone number') && this.errors.phoneNumber === '') {
+          this.errors.phoneNumber = error
+        }
+      })
       return
     }
 
