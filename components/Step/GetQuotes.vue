@@ -5,7 +5,6 @@
       <div class="mb-6">
         <TextInput
           v-model="streetAddress"
-          class=""
           rules="street-address"
           placeholder="Street Address"
           :errors="[errors.address]"
@@ -17,7 +16,6 @@
       <div class="mb-6">
         <TextInput
           v-model="phoneNumber"
-          class=""
           rules="phone-number"
           placeholder="Phone Number"
           :errors="[errors.phoneNumber]"
@@ -73,7 +71,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 
 import BigTitle from '~/components/BigTitle.vue'
 import Title from '~/components/Title.vue'
@@ -108,6 +106,44 @@ export default class GetQuotes extends Vue {
 
   submitted = false
 
+  // Format phone number
+  @Watch('phoneNumber')
+  onPhoneNumberChanged(value: any, oldValue: string) {
+    // When delete phone number, not work
+    if (value.length < oldValue.length) {
+      return
+    }
+
+    // Just inputed character
+    let lastChar = value.slice(-1)
+
+    // Validate is number
+    if (isNaN(lastChar)) {
+      this.phoneNumber = oldValue
+      return
+    }
+
+    // Add parentheses
+    if (value.length < 2) {
+      value = `(${value}`
+    }
+
+    if (value.length === 5) {
+      value = `${value.slice(0, -1)}) ${lastChar}`
+    }
+
+    // Add minus symbol
+    if (value.length === 10) {
+      value = `${value.slice(0, -1)}-${lastChar}`
+    }
+
+    // Limit max length
+    if (value.length > 14) {
+      value = oldValue
+    }
+
+    this.phoneNumber = value
+  }
   async created() {
     this.streetAddress = this.$store.state.streetAddress
     this.phoneNumber = this.$store.state.phoneNumber
