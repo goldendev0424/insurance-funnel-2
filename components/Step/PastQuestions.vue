@@ -3,25 +3,31 @@
     <Title>Has anyone on this policy had:</Title>
     <div class="space-y-8">
       <div class="w-full">
-        <Title class="mb-3"
-          ><span>An at-fault accident in the past</span
-          ><span class="font-semibold"> three (3) years?</span></Title
-        >
+        <Title class="mb-3">
+          <span class="text-3xl">
+            <span>An at-fault accident in the past</span>
+            <span class="font-semibold"> three (3) years?</span>
+          </span>
+        </Title>
         <BinarySelection v-model="atFaultAccident"></BinarySelection>
       </div>
       <div class="w-full">
-        <Title class="mb-3"
-          ><span class="font-semibold">Two (2) or more</span
-          ><span> tickets in the past</span
-          ><span class="font-semibold"> three (3) years?</span></Title
-        >
+        <Title class="mb-3">
+          <span class="text-3xl">
+            <span class="font-semibold">Two (2) or more</span>
+            <span> tickets in the past</span>
+            <span class="font-semibold"> three (3) years?</span>
+          </span>
+        </Title>
         <BinarySelection v-model="twoOrMoreTickets"></BinarySelection>
       </div>
       <div class="w-full">
-        <Title class="mb-3"
-          ><span>A DUI conviction in the past</span
-          ><span class="font-semibold"> three (3) years?</span></Title
-        >
+        <Title class="mb-3">
+          <span class="text-3xl">
+            <span>A DUI conviction in the past</span>
+            <span class="font-semibold"> three (3) years?</span>
+          </span>
+        </Title>
         <BinarySelection v-model="duiConviction"></BinarySelection>
       </div>
     </div>
