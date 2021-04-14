@@ -1,25 +1,26 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-6" tag="div">
     <Title>{{ $store.state.name.first }}, Last Step!</Title>
-    <div class="">
-      <div class="mb-6">
+    <div>
+      <div class="flex flex-col">
+        <label for="address" class="text-xl mb-2">Street Address <span class="text-red-500">*</span></label>
         <TextInput
           v-model="streetAddress"
+          id="address"
           rules="street-address"
-          placeholder="Street Address"
-          :errors="[errors.address]"
-        ></TextInput>
-        <div class="mt-1 font-thin text-indigo-600 text-sm sm:block">
+          :errors="[errors.address]" />
+        <div class="font-thin text-indigo-600 text-sm mb-6">
           {{ city }}, {{ state }} {{ $store.state.zipcode }}
         </div>
       </div>
-      <div class="mb-6">
+
+      <div class="flex flex-col">
+        <label for="phone_number" class="text-xl mb-2">Phone Number <span class="text-red-500">*</span></label>
         <TextInput
           v-model="phoneNumber"
+          id="phone_number"
           rules="phone-number"
-          placeholder="Phone Number"
-          :errors="[errors.phoneNumber]"
-        ></TextInput>
+          :errors="[errors.phoneNumber]" />
       </div>
     </div>
     <PrimaryButton

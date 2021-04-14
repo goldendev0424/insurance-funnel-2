@@ -1,27 +1,29 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-6" tag="div">
     <div>
-      <TextInput
-        v-model="name.first"
-        class="mb-8"
-        rules="first-name"
-        placeholder="First Name"
-        :errors="[errors.firstName]"
-      ></TextInput>
-      <TextInput
-        v-model="name.last"
-        class="mb-8"
-        rules="last-name"
-        placeholder="Last Name"
-        :errors="[errors.lastName]"
-      ></TextInput>
-      <TextInput
-        v-model="email"
-        class="mb-8"
-        rules="email"
-        placeholder="Email"
-        :errors="[errors.email]"
-      ></TextInput>
+      <div class="flex flex-col">
+        <label for="first_name" class="text-xl mb-2">First name <span class="text-red-500">*</span></label>
+        <TextInput
+          v-model="name.first"
+          id="first_name"
+          rules="first-name"
+          :errors="[errors.firstName]" />
+      </div>
+      <div class="flex flex-col">
+        <label for="last_name" class="text-xl mb-2">Last name <span class="text-red-500">*</span></label>
+        <TextInput
+          v-model="name.last"
+          id="last_name"
+          rules="last-name"
+          :errors="[errors.lastName]" />
+      </div>
+      <div class="flex flex-col">
+        <label for="last_name" class="text-xl mb-2">Email <span class="text-red-500">*</span></label>
+        <TextInput
+          v-model="email"
+          rules="email"
+          :errors="[errors.email]" />
+      </div>
     </div>
     <PrimaryButton @click="next" class="mmd:w-full mb-4">CONTINUE</PrimaryButton>
   </ValidationObserver>

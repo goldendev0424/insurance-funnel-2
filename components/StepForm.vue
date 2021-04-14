@@ -15,7 +15,7 @@
         class="transform transition-all duration-400"
         :class="{
           '-translate-y-20 opacity-0': !inPlace,
-          'translate-y-0 opacuty-100': inPlace,
+          'translate-y-0 opacity-100': inPlace,
         }"
         @next="next"
         @submit="submit"
