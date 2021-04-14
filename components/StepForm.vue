@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="w-full flex justify-center">
-    <div class="sm:max-w-none sm:w-full sm:m-0 px-5 pt-8 sm:pt-3 min-h-125 max-w-200 min-w-200 sm:min-w-full">
+    <div class="px-4 pt-8 min-h-125 w-full mmd:max-w-200 mmd:min-w-200">
       <ProgressBar
         :steps="formOrder.length"
         :current="current"

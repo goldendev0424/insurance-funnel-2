@@ -1,7 +1,7 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-8" tag="div">
     <Title>Enter Zip Code To Begin</Title>
-    <div class="flex items-start justify-center sm:block">
+    <div class="block mmd:flex items-start justify-center">
       <TextInput
         v-model="zipcode"
         rules="zipcode"
@@ -9,7 +9,7 @@
         maxlength="5"
         placeholder="#####"
       ></TextInput>
-      <PrimaryButton :right="true" @click="next" class="ml-8 sm:ml-0">CHECK RATES</PrimaryButton>
+      <PrimaryButton :right="true" @click="next" class="ml-0 mmd:ml-8">CHECK RATES</PrimaryButton>
     </div>
   </ValidationObserver>
 </template>

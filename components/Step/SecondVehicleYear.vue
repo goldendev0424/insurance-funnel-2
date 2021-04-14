@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="w-full mt-6">
     <Title>Second Vehicle Year</Title>
-    <div class="">
+    <div class="flex flex-wrap justify-center">
       <Option
         v-for="year in years"
         :key="year"

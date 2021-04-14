@@ -1,6 +1,6 @@
 <template lang="html">
   <button
-    class="text-2xl text-white rounded border-b-3 border-blue-600 bg-blue-400 hover:bg-blue-600 duration-300 py-4 px-5 mb-3 mx-1 outline-none"
+    class="ssm:text-2xl text-xl text-white rounded border-b-3 border-blue-600 bg-blue-400 hover:bg-blue-600 duration-300 py-4 px-3 mb-3 mx-1 outline-none break-all"
     v-bind="$props"
     :class="{
       'bg-blue-600': active,

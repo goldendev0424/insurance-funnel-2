@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="inline-flex items-center cursor-pointer text-gray-500 sm:hidden">
+  <div class="hidden mmd:inline-flex items-center cursor-pointer text-gray-500">
     <FontAwesomeIcon class="h-3" icon="chevron-left"></FontAwesomeIcon>
     <div class="font-bold text-sm ml-1">Previous Question</div>
   </div>

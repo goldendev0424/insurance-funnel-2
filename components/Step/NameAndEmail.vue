@@ -23,7 +23,7 @@
         :errors="[errors.email]"
       ></TextInput>
     </div>
-    <PrimaryButton @click="next" class="w-full mb-4">CONTINUE</PrimaryButton>
+    <PrimaryButton @click="next" class="mmd:w-full mb-4">CONTINUE</PrimaryButton>
   </ValidationObserver>
 </template>
 

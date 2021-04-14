@@ -1,15 +1,15 @@
 <template lang="html">
   <div
-    class="flex items-center justify-between p-5 w-full text-gray-600 sm:block sm:text-sm sm:text-center"
+    class="block mmd:flex items-center justify-between p-5 w-full text-gray-600 text-sm mmd:text-base text-center"
   >
-    <div class="sm:leading-none sm:p-2">
+    <div class="p-2 mmd:p-0">
       © {{ currentYear }} Placeholder company inc.
     </div>
-    <div class="space-x-3 flex sm:inline-block sm:space-x-0">
+    <div class="inline-block mmd:flex space-x-3">
       <div
         v-for="(item, i) in menu"
         :key="i"
-        class="underline sm:inline-block sm:p-2"
+        class="underline inline-block"
       >
         <NuxtLink :to="menu[i][1]">{{ menu[i][0] }}</NuxtLink>
       </div>

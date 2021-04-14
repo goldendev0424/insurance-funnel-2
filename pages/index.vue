@@ -2,7 +2,7 @@
   <div class="relative">
     <Header></Header>
     <StepForm></StepForm>
-    <SocialProof class="sm:hidden"></SocialProof>
+    <SocialProof class="hidden mmd:flex"></SocialProof>
     <Footer></Footer>
   </div>
 </template>

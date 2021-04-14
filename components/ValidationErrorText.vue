@@ -1,6 +1,7 @@
 <template lang="html">
   <div
-    class="font-bold text-lg text-red-600 border-l-4 border-red-600 pl-2 sm:text-center sm:text-base sm:border-0 sm:text-white sm:bg-red-600 sm:py-half sm:font-semibold mt-4 sm:mt-3"
+    class="text-base mmd:text-lg text-white mmd:text-red-600 border-0 mmd:border-l-4 border-red-600 pl-0 mmd:pl-2 text-center mmd:text-left bg-red-600 mmd:bg-white
+          font-semibold mmd:font-bold mt-3 mmd:mt-4"
   >
     <slot></slot>
   </div>

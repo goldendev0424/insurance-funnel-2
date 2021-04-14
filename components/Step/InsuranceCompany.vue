@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="w-full mt-6">
     <Title>Current Auto Insurance</Title>
-    <div class="">
+    <div class="flex flex-wrap justify-between">
       <Option
         v-for="insuranceCompany in insuranceCompanies"
         :key="insuranceCompany"

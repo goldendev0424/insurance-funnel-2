@@ -4,7 +4,7 @@
     <div class="space-y-8">
       <div class="w-full">
         <Title class="mb-3">
-          <span class="text-3xl">
+          <span class="text-xl mmd:text-2.5xl">
             <span>An at-fault accident in the past</span>
             <span class="font-semibold"> three (3) years?</span>
           </span>
@@ -13,7 +13,7 @@
       </div>
       <div class="w-full">
         <Title class="mb-3">
-          <span class="text-3xl">
+          <span class="text-xl mmd:text-2.5xl">
             <span class="font-semibold">Two (2) or more</span>
             <span> tickets in the past</span>
             <span class="font-semibold"> three (3) years?</span>
@@ -23,7 +23,7 @@
       </div>
       <div class="w-full">
         <Title class="mb-3">
-          <span class="text-3xl">
+          <span class="text-xl mmd:text-2.5xl">
             <span>A DUI conviction in the past</span>
             <span class="font-semibold"> three (3) years?</span>
           </span>
@@ -31,7 +31,7 @@
         <BinarySelection v-model="duiConviction"></BinarySelection>
       </div>
     </div>
-    <PrimaryButton class="my-6 w-full" @click="next">CONTINUE</PrimaryButton>
+    <PrimaryButton class="my-6 mmd:w-full" @click="next">CONTINUE</PrimaryButton>
     <ValidationErrorText v-if="errors.length" class="mb-8">
       {{ errors[0] }}</ValidationErrorText
     >

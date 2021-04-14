@@ -1,6 +1,6 @@
 <template lang="html">
   <ValidationObserver ref="observer" class="w-full mt-6" tag="div">
-    <BigTitle>{{ $store.state.name.first }}, Last Step!</BigTitle>
+    <Title>{{ $store.state.name.first }}, Last Step!</Title>
     <div class="">
       <div class="mb-6">
         <TextInput
@@ -23,7 +23,7 @@
       </div>
     </div>
     <PrimaryButton
-      class="block w-full"
+      class="mmd:w-full"
       :bold="true"
       :disabled="submitted"
       @click="submit"
@@ -73,14 +73,12 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'nuxt-property-decorator'
 
-import BigTitle from '~/components/BigTitle.vue'
 import Title from '~/components/Title.vue'
 import TextInput from '~/components/TextInput.vue'
 import PrimaryButton from '~/components/PrimaryButton.vue'
 
 @Component({
   components: {
-    BigTitle,
     Title,
     TextInput,
     PrimaryButton,

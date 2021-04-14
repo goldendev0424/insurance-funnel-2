@@ -1,6 +1,6 @@
 <template lang="html">
   <button
-    class="p-5 leading-none text-white text-2xl outline-none rounded border-b-3 border-blue-600 bg-blue-400 hover:bg-blue-600 duration-300 sm:w-full sm:p-4 sm:mt-6"
+    class="p-4 leading-none text-white text-2xl outline-none rounded border-b-3 border-blue-600 bg-blue-400 hover:bg-blue-600 duration-300 w-full mmd:w-auto"
     v-bind="$attrs"
     v-on="$listeners"
   >

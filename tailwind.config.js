@@ -10,9 +10,8 @@ module.exports = {
   important: true,
   theme: {
     screens: {
-      sm: {
-        max: '800px',
-      },
+      ssm: '440px',
+      mmd: '800px'
     },
     extend: {
       minHeight: {
@@ -27,7 +26,8 @@ module.exports = {
         '200': '50rem',
       },
       width: {
-        '5.5/12': '48%',
+        '5.5/12': '47%',
+        '2.5/5': '42%'
       },
       transitionDuration: {
         '400': '400ms'
@@ -35,9 +35,12 @@ module.exports = {
       boxShadow: {
         default: '0 0 5px #949494',
       },
-      borderWidth : {
+      borderWidth: {
         '3': '3px'
       },
+      fontSize: {
+        '2.5xl': '1.8rem'
+      }
     },
   },
   plugins: [require('@tailwindcss/forms')],

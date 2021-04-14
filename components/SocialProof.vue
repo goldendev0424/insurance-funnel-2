@@ -1,6 +1,6 @@
 <template lang="html">
   <div
-    class="social-proof w-full border-t border-b border-gray-400 border-dashed flex flex-col items-center py-12"
+    class="w-full border-t border-b border-gray-400 border-dashed flex flex-col items-center py-12"
   >
     <div class="font-bold text-gray-900 mb-6">Providers Include:</div>
     <div class="flex items-center space-x-10">

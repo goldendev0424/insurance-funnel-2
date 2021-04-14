@@ -1,6 +1,9 @@
 <template lang="html">
   <div class="w-full mt-6">
-    <Title>Add Second Vehicle? (Save Additional 20%)</Title>
+    <Title>
+      <span class="mmd:block">Add Second Vehicle?</span>
+      <span>(Save Additional 20%)</span>
+    </Title>
     <BinarySelection :value="hasSecondVehicle" @input="next"></BinarySelection>
   </div>
 </template>
