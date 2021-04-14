@@ -162,9 +162,12 @@ export default class GetQuotes extends Vue {
     }
     const res = await this.$refs.observer.validateWithInfo()
 
+    if (this.phoneNumber.length < 14) {
+      this.errors.phoneNumber = 'Please enter a valid phone number'
+    }
+
     if (!res.isValid) {
       let errors = Object.values(res.errors).flat()
-      console.log(errors)
       errors.forEach((error) => {
         if (error.includes('street address') && this.errors.address === '') {
           this.errors.address = error
@@ -174,8 +177,11 @@ export default class GetQuotes extends Vue {
           this.errors.phoneNumber = error
         }
       })
+
       return
     }
+
+    if (this.errors.phoneNumber !== '') return
 
     this.submitted = true
     this.$store.commit('SET_STREET_ADDRESS', this.streetAddress)
