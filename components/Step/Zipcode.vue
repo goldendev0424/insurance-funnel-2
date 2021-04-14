@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 
 import Title from '~/components/Title.vue'
 import TextInput from '~/components/TextInput.vue'
@@ -38,6 +38,14 @@ export default class Zipcode extends Vue {
   errors: string[] = []
 
   zipcode = ''
+
+  @Watch('zipcode')
+  onZipcodeChanged(value: any, oldValue: string) {
+    // If zipcode is not a number
+    if (isNaN(value)) {
+      this.zipcode = oldValue
+    }
+  }
 
   created() {
     this.zipcode = this.$store.state.zipcode
