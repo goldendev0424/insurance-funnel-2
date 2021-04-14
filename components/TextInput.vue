@@ -2,7 +2,7 @@
   <ValidationProvider slim="slim" :rules="rules" tag="div">
     <input
       class="p-5 sm:p-3 leading-none tracking-wide text-xl text-blue-700 shadow rounded duration-500 border outline-none hover:border-blue-500 focus:border-blue-500
-          bg-gray-200 font-bold placeholder-normal focus:bg-white sm:block w-full sm:text-base sm:text-center"
+          bg-gray-200 placeholder-normal focus:bg-white sm:block w-full sm:text-base sm:text-center"
       v-bind="$attrs"
       @input="$emit('input', $event.target.value)"
     />

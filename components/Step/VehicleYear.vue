@@ -5,6 +5,7 @@
       <Option
         v-for="year in years"
         :key="year"
+        class="max-w-25 min-w-25"
         :active="year === selectedYear"
         @click="next(year)"
         >{{ year }}</Option
