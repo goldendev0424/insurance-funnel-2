@@ -4,7 +4,7 @@
     <div class="space-y-8">
       <div class="w-full">
         <Title class="mb-3">
-          <span class="text-xl mmd:text-2.5xl">
+          <span class="text-xl mmd:text-2.5xl text-gray-700 leading-normal">
             <span>An at-fault accident in the past</span>
             <span class="font-semibold"> three (3) years?</span>
           </span>
@@ -13,7 +13,7 @@
       </div>
       <div class="w-full">
         <Title class="mb-3">
-          <span class="text-xl mmd:text-2.5xl">
+          <span class="text-xl mmd:text-2.5xl text-gray-700 leading-normal">
             <span class="font-semibold">Two (2) or more</span>
             <span> tickets in the past</span>
             <span class="font-semibold"> three (3) years?</span>
@@ -23,7 +23,7 @@
       </div>
       <div class="w-full">
         <Title class="mb-3">
-          <span class="text-xl mmd:text-2.5xl">
+          <span class="text-xl mmd:text-2.5xl text-gray-700 leading-normal">
             <span>A DUI conviction in the past</span>
             <span class="font-semibold"> three (3) years?</span>
           </span>
