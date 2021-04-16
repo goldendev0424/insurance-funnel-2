@@ -3,7 +3,7 @@
     <Title>Birthdate</Title>
     <div class="flex flex-col items-center">
       <div class="mb-6 w-full mmd:w-auto">
-        <div class="flex justify-around p-5 text-xl text-blue-700 font-bold shadow rounded duration-500 border focus:border-blue-500 bg-white">
+        <div class="flex justify-around py-5 px-1.5 text-xl text-blue-700 font-bold shadow rounded duration-500 border focus:border-blue-500 bg-white">
           <input class="outline-none text-center text-black focus:text-blue-700" size="2" maxLength="2" placeholder="MM"
             v-model="birthdate.month" ref="monthInput" />
           <span class="mx-3">/</span>
